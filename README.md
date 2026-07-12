@@ -29,12 +29,23 @@ Second, most people learning cybersecurity study alone and nobody ever sees the 
 
 ## How it's organized
 
-The folders follow the order I'm actually learning things in. A folder shows up when I reach that topic, not before. Right now I'm just starting Phase 1, so this is all there is:
+The folders follow the order I'm actually learning things in. A topic shows up once I reach it, not before. Each topic lives in three mirrored places — a note, a quiz to test myself on it, and sometimes a diagram or two — so right now, still in Phase 1, this is all there is:
 
 ```text
-foundations/
-    networking/
-        osi-model.md
+notes/foundations/networking/
+    osi-model.md
+    networking-devices.md
+
+quize/foundations/networking/
+    osi-model-quiz.md
+    networking-devices-quiz.md
+
+img/foundations/networking/
+    osi-model.png
+    networking-devices-overview.png
+    osi-layer-device-map.png
+    ids-vs-ips-placement.png
+    nas-vs-san-access.png
 ```
 
 More will get added as I move through networking, then Linux, then Python, then into SOC, AppSec, and cloud — following my roadmap. This tree will keep growing, it just reflects wherever I actually am right now, nothing added ahead of time.
@@ -69,6 +80,13 @@ The short, spoken version. The way I'd actually explain this to an interviewer o
 ```
 
 Not every note needs every section. A short note on a small tool might just use "in short," "what it is," and "key details." A deep topic like the OSI model or a TLS handshake will use all seven. I use whatever fits, and I'd rather write a short, correct note today than wait until I can fill in every section — I go back and expand notes as I understand more.
+
+Most notes also come with two companions by now:
+
+- A **quiz**, in `quize/`, same filename with `-quiz` on the end — scenario questions written the way an interviewer would actually ask them, answers hidden behind a toggle so I can't cheat by reading ahead, and a "mistakes I made" section at the bottom that's just my wrong answers, left exactly as wrong as I gave them.
+- A few **images**, in `img/`, dropped straight into the note wherever a diagram gets the point across faster than another paragraph would.
+
+Same rule as the notes themselves — these get added once a topic actually has them, not ahead of time.
 
 ## If you want to learn from this
 
