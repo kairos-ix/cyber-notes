@@ -7,7 +7,7 @@ A reference model that breaks down how data moves across a network into 7 layers
 ## What it is
 7 layers total. Numbering starts from the bottom — physical layer is layer 1, application layer is layer 7, not the other way around.
 
-![OSI Model](../../../img/osi-model.png)
+![OSI Model](../../../img/foundations/networking/osi-model.png)
 
 ## Quick reference
 
