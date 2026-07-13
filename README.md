@@ -35,10 +35,12 @@ The folders follow the order I'm actually learning things in. A topic shows up o
 notes/foundations/networking/
     osi-model.md
     networking-devices.md
+    networking-functions.md
 
 quize/foundations/networking/
     osi-model-quiz.md
     networking-devices-quiz.md
+    networking-functions-quiz.md
 
 img/foundations/networking/
     osi-model.png
@@ -46,6 +48,9 @@ img/foundations/networking/
     osi-layer-device-map.png
     ids-vs-ips-placement.png
     nas-vs-san-access.png
+    networking-functions-overview.png
+    qos-queuing-diagram.png
+    ttl-hop-count-diagram.png
 ```
 
 More will get added as I move through networking, then Linux, then Python, then into SOC, AppSec, and cloud — following my roadmap. This tree will keep growing, it just reflects wherever I actually am right now, nothing added ahead of time.
