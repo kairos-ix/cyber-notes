@@ -40,7 +40,7 @@ notes/foundations/networking/
 quize/foundations/networking/
     osi-model-quiz.md
     networking-devices-quiz.md
-    networking-fucntions-quiz.md
+    networking-functions-quiz.md
 
 img/foundations/networking/
     osi-model.png
