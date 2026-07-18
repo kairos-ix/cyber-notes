@@ -107,18 +107,3 @@ You can't say the OS has TTL 51 because that number is what's **left after decre
 **VPN + QoS conflict.** When traffic goes through a VPN, the entire original packet (including its headers) gets encapsulated and encrypted inside a new outer packet. If a packet's DSCP marking lives on the *inner* (original) header, and a router along the path only inspects the *outer* (tunnel) header, it can't see the priority marking anymore — carefully prioritized VoIP traffic gets treated as generic best-effort once it enters the tunnel. Most VPN implementations fix this by **copying the DSCP value from the inner header to the outer header** during encapsulation specifically so QoS still works across the tunnel. If that copy doesn't happen (misconfigured or older gear), voice quality degrades over the VPN even though QoS looks "configured correctly" — because the priority marking never survives encryption/encapsulation.
 
 </details>
-
----
-
-## Mistakes I made in this quiz
-
-Keeping this section honest, not cleaned up, since re-reading my own wrong answers is more useful than re-reading correct ones.
-
-- Got the TTL drop mechanism half right (router drops it, content goes with it) but missed the **ICMP Time Exceeded** reply entirely — didn't know that's what actually gets sent back to the sender, or that it's the whole basis of `traceroute`.
-- Pushed on "CDN is just caching" and just restated the caching mechanism in different words instead of naming what's *beyond* it — DDoS mitigation, SSL termination, load balancing, origin shielding didn't come up at all.
-- Described remote-access VPN backwards — said the user "installs a VPN server or a physical device," when it's actually **client software** on the user's end connecting out to the concentrator, which sits on the org's side. Site-to-site was correct.
-- Blanked completely on the QoS marking/enforcement question — no knowledge of **DSCP** or **queuing/scheduling** at all going in.
-- Explained *why a routing loop is bad* (overloads the network) but not *why it doesn't stay bad forever* — missed that TTL is the specific, structural reason a loop is self-limiting per packet, not just "it eventually causes problems."
-- Called the VPN integrity mechanism a "secret verification key" — the actual term is **HMAC**, a hash-based check using a shared key, not just "a key" on its own.
-- Got the TTL hop-count arithmetic wrong (said 64 − 51 = 14, it's **13**), and didn't flag that the starting TTL is an assumption based on common defaults, not something you can know for certain from the number alone.
-- Answered the "one interaction between two functions" question with a list of all four functions used in sequence, instead of naming one specific dependency — needed the VPN-hides-DSCP-marking case, not "VPN tunnel, then QoS, then CDN, then TTL on every packet."

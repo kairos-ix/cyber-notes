@@ -199,21 +199,3 @@ The handshake (SYN, SYN-ACK, ACK) happens before any data is sent — it confirm
 Mostly right. OSI (7 layers) is a theoretical/reference model, never fully implemented as-is. TCP/IP (4 layers: Network Access, Internet, Transport, Application) is what the internet actually runs on — it squashes OSI's Session, Presentation, and Application into one Application layer. That's exactly why TLS, ARP, and QUIC don't map cleanly onto OSI — they were built around TCP/IP's simpler structure. Matters for interviews because when someone asks "which layer does X operate at" for something like TLS, they're often testing whether I understand OSI is a simplified model and can reason about where something approximately fits — not whether I can recite one "correct" box.
 
 </details>
-
----
-
-## Mistakes I made in this quiz
-
-Keeping this section honest, not cleaned up, since re-reading my own wrong answers is more useful than re-reading correct ones.
-
-- Called DNS a presentation-layer issue. It's application layer — presentation is about data format, not name lookup.
-- Said "frames get sent to the dest MAC via the physical layer." MAC addressing/framing is Layer 2. Physical layer only moves raw bits, it doesn't know what a MAC address is.
-- Skipped past committing to ARP's layer entirely — described the mechanism but dodged classifying it.
-- Said UDP trades "drop data but no speed" — backwards phrasing. We trade reliability *for* speed, not the other way around.
-- Listed "reliability, accuracy, security" as TCP guarantees. Accuracy is just reliability restated. Security is flat wrong — TCP has none built in.
-- Said TLS is "application layer, responsible for security" with no defense — right conclusion, no reasoning behind it.
-- Listed HTTP and HTTPS as two separate Layer 7 protocols without noting HTTPS is just HTTP over TLS.
-- Called a switch's forwarding "cannot operate lower because Layer 1 does bit transmission" — backwards causality. It's not that L1 is off-limits, it's that switches need L2 address info that L1 doesn't have.
-- Router explanation: said "reads the next hop address" — that's the output of the decision, not what it reads. Should be "reads destination IP, checks routing table." Also said switches "flood to every IP" — switches don't look at IPs at all, and they don't flood once they've learned a MAC-to-port mapping.
-- Called a port number "the medium" — medium is a Layer 1 concept. Port identifies the service/process, not the transmission method.
-- Stopped at "Layer 4, via TCP" for the corruption question instead of naming the actual mechanism (checksum comparison, discard, retransmit).

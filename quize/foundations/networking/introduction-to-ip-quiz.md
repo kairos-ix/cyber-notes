@@ -163,19 +163,3 @@ This is UDP. The strongest, most direct evidence is the **IP protocol field = 17
 Port 5004 is a direct match to the well-known VoIP port from the material's own example, so this is almost certainly real-time voice traffic — an app that would rather drop a bad audio packet than stall waiting for a retransmit, since a "recovered" late packet is worthless once the moment's passed.
 
 </details>
-
----
-
-## Mistakes I made in this quiz
-
-Keeping this section honest, not cleaned up, since re-reading my own wrong answers is more useful than re-reading correct ones.
-
-- Skipped the **Ethernet header and trailer** entirely and started my header-order answer at IP instead — called a frame "a packet" and called the TCP/UDP header "a data packet," which aren't real terms.
-- Only explained TCP's ack/retransmission on the UDP-drops-under-load question and missed **flow control**, which is the actual mechanism that answers "why does UDP drop and TCP doesn't."
-- Thought **TCP and UDP couldn't use the same port number at the same time** — they can, because protocol is part of the socket tuple. Only same-protocol + same-port + same-IP is restricted.
-- Said the ephemeral port range was **1024–65555** instead of **65535**, and didn't flag that "51422 = client" is a convention, not a guarantee.
-- Mapped the **three-way handshake to reliability/retransmission** instead of connection setup — conflated two separate TCP properties (session management vs. delivery guarantee) into one answer.
-- On the multiplexing question, said "port numbers and protocol help the OS classify traffic" without naming the actual mechanism — the socket table match on protocol + local/remote IP + local/remote port, and the role of ephemeral source ports.
-- Said TCP "stops the data flow" when a packet is missed, instead of naming **head-of-line blocking** — the sender doesn't stop, the receiver withholds already-arrived data from the app while waiting on the gap.
-- On the IP-vs-port analogy question, said a port "doesn't have the capability to move over network" instead of the actual reason — a port is only locally meaningful and isn't globally routable, so routers don't even look at it.
-- On protocol identification from a capture, led with the weaker circumstantial evidence (no SYN/ACK, missing packets) instead of citing the **IP protocol field (6 = TCP, 17 = UDP)** first, which is the direct, unambiguous answer.

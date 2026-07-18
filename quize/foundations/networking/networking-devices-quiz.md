@@ -99,19 +99,3 @@ An **NGFW** (Next-Generation Firewall). The technique it uses is called **deep p
 A **forward proxy** (the standard meaning of "proxy server") sits in front of clients and acts **on behalf of the client** — the destination server sees the proxy's IP, not the real client's. Use case: a company filtering, logging, or caching what its employees access on the outbound internet. A **reverse proxy** sits in front of servers and acts **on behalf of the server** — the client believes it's talking directly to the real server and has no visibility into what's actually behind it. Use case: hiding backend servers from direct exposure, load balancing across them, or SSL termination. One-line way to keep it straight: **forward proxy hides the client, reverse proxy hides the server.**
 
 </details>
-
----
-
-## Mistakes I made in this quiz
-
-Keeping this section honest, not cleaned up, since re-reading my own wrong answers is more useful than re-reading correct ones.
-
-- Blamed the **switch** for a "same subnet works, cross-subnet fails" symptom, because I latched onto "MAC address, Layer 2" instead of reasoning through the actual symptom. Should have been the router/default gateway — a switch failure wouldn't selectively break only cross-subnet traffic.
-- Knew a router was needed for inter-VLAN communication but skipped the actual reasoning (VLANs are separate broadcast domains, a switch has no Layer 3 concept) and didn't have the term **router-on-a-stick** ready.
-- Blanked on **fat AP vs. thin AP** even after being handed the exact terms to use in the question.
-- Said a VPN-capable firewall is "Layer 3 because it also routes the data" — mixed up **VPN tunneling** (encryption/encapsulation over an already-existing path) with actual **routing** (forwarding decisions via a routing table). Two unrelated capabilities.
-- Described block-level access as "you don't have to fetch the whole file" — that's the effect, not the mechanism. The real distinction is **who owns the filesystem**, not how much data moves.
-- Said "the router is responsible for assigning IPs" without naming DHCP properly, and didn't know `169.254.x.x` is **APIPA**, or that DHCP runs on **UDP 67/68**, at all.
-- Could describe *what* IDS and IPS each do (alert vs. block) but not *where* each one sits (out-of-band vs. inline) or why that placement is what actually causes the capability difference.
-- Never heard the term **session persistence** for the load balancer scenario — understood the behavior needed, had no name and no method (cookie/source IP) for it.
-- Completely swapped **forward proxy and reverse proxy** — said the proxy acts for the server and the reverse proxy acts for the client. Backwards both ways.
