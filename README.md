@@ -29,45 +29,25 @@ Second, most people learning cybersecurity study alone and nobody ever sees the 
 
 ## How it's organized
 
-The folders follow the order I'm actually learning things in. A topic shows up once I reach it, not before. Each topic lives in three mirrored places — a note, a quiz to test myself on it, and sometimes a diagram or two — so right now, still in Phase 1, this is all there is:
+The folders follow the order I'm actually learning things in. A topic shows up once I reach it, not before. Each topic lives in three mirrored places — a note, a quiz to test myself on it, and sometimes a diagram or two.
+
+Because listing every single file gets cluttered fast, here is the high-level structure of how everything connects:
 
 ```text
-notes/foundations/networking/
-    osi-model.md
-    networking-devices.md
-    networking-functions.md
-    introduction-to-ip.md
-    common-ports.md
-
-quize/foundations/networking/
-    osi-model-quiz.md
-    networking-devices-quiz.md
-    networking-functions-quiz.md
-    introduction-to-ip-quiz.md
-    common-ports-quiz.md
-
-img/foundations/networking/
-    osi-model.png
-    networking-devices-overview.png
-    osi-layer-device-map.png
-    ids-vs-ips-placement.png
-    nas-vs-san-access.png
-    networking-functions-overview.png
-    qos-queuing-diagram.png
-    ttl-hop-count-diagram.png
-    ip-encapsulation-diagram.png
-    tcp-vs-udp-comparison.png
-    three-way-handshake-flow.png
-    port-multiplexing-diagram.png
-    ftp-control-vs-data-channel.png
-    insecure-vs-secure-port-pairs.png
-    snmp-same-port-versions.png
-
-resources/
-    README.md
+cyber-notes/
+├── notes/      # The actual explanations, organized by phase and topic
+│   └── foundations/
+│       └── networking/
+├── quize/      # Self-test questions for each note
+│   └── foundations/
+│       └── networking/
+├── img/        # Diagrams and visual aids referenced in the notes
+│   └── foundations/
+│       └── networking/
+└── resources/  # General reference material and guides
 ```
 
-More will get added as I move through networking, then Linux, then Python, then into SOC, AppSec, and cloud — following my roadmap. This tree will keep growing, it just reflects wherever I actually am right now, nothing added ahead of time.
+More topics will get added as I move through networking, then Linux, then Python, then into SOC, AppSec, and cloud — following my roadmap. This tree will keep growing, it just reflects wherever I actually am right now, nothing added ahead of time.
 
 ## How I write a note
 
